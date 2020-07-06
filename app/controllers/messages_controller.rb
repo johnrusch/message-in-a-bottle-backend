@@ -3,4 +3,6 @@ class MessagesController < ApplicationController
         messages = Message.all
         render json: messages.to_json
     end
+
+    #testing
 end
