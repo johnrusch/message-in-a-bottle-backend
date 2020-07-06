@@ -27,6 +27,7 @@ end
 
 50.times do
     Journal.create({
+        title: Faker::Hipster.sentence,
         content: Faker::Hipster.paragraph,
         user_id: User.all.sample.id
     })
