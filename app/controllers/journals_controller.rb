@@ -13,6 +13,16 @@ class JournalsController < ApplicationController
         render json: journal.to_json
     end
 
+    def edit
+        journal = Journal.find(params[:id])
+    end
+
+    def update
+        journal = Journal.find(params[:id])
+        journal.update(journal_params)
+        render json: journal.to_json
+    end
+
     def destroy
         journal = Journal.find(params[:id])
         journal.destroy
