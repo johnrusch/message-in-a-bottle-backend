@@ -12,7 +12,6 @@ class Api::V1::AuthController < ApplicationController
 
     def show
         @user = User.find_by(id: user_id)
-        byebug
         if @user && logged_in?
             render json: { id: @user.id, name: @user.name}
         else 
