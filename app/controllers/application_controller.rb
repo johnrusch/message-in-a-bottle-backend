@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::API
 
     def issue_token(user)
-        JWT.encode({user_id: user.id}, 'secret_key', 'HS256')
+        JWT.encode({user_id: user.id, greeting: "Welcome to Message In A Bottle"}, 'secret_key', 'HS256')
     end
 
     def current_user

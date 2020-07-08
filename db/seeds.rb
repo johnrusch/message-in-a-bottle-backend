@@ -32,3 +32,8 @@ end
         user_id: User.all.sample.id
     })
 end
+
+User.create({
+    name: "john",
+    password: "john"
+})
