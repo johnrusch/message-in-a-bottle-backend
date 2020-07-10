@@ -7,7 +7,6 @@ class Api::V1::UsersController < ApplicationController
 
     def create
         @user = User.create(user_params)
-        byebug
         if @user.valid? && @user.authenticate(params[:password])
             token = issue_token(@user)
             render json: {id: @user.id, name: @user.name, jwt: token}
