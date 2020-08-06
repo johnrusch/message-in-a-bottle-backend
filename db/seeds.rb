@@ -10,14 +10,30 @@ User.destroy_all
 Message.destroy_all
 Journal.destroy_all
 
-50.times do 
-    User.create({
-        name: Faker::Name.first_name,
-        password: Faker::Name.last_name
-    })
-end
+# 50.times do 
+#     User.create({
+#         name: Faker::Name.first_name,
+#         password: Faker::Name.last_name
+#     })
+# end
 
-50.times do
+
+User.create({
+    name: "john",
+    password: "john"
+})
+
+User.create({
+    name: "Andy",
+    password: "andy"
+})
+
+User.create({
+    name: "Klarissa",
+    password: "klarissa"
+})
+
+10.times do
     Message.create({
         content: Faker::Hipster.paragraph,
         sender_user_id: User.all.sample.id, 
@@ -25,15 +41,10 @@ end
     })
 end
 
-50.times do
+10.times do
     Journal.create({
-        title: Faker::Hipster.sentence,
-        content: Faker::Hipster.paragraph,
-        user_id: User.all.sample.id
-    })
-end
-
-User.create({
-    name: "john",
-    password: "john"
-})
+            title: Faker::Hipster.sentence,
+            content: Faker::Hipster.paragraph,
+            user_id: User.all.sample.id
+        })
+    end
